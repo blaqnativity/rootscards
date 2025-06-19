@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap");
+@import "tailwindcss";
+
+:root {
+  /* Brand Colors */
+  --color-primary: #180955;
+  --color-secondary: #ff6f61;
+  --color-accent: #fbbc05;
+
+  /* Neutral Colors */
+  --color-white: #f8f6fc;
+  --color-black: #000000;
+  --color-gray-light: #f4f4f4;
+  --color-gray-dark: #333333;
+}
+
+body {
+  font-family: "Instrument Sans", sans-serif;
+  scroll-behavior: smooth;
+  background-color: var(--color-white);
+  color: var(--text-primary);
+}
+
+h1 {
+  color: var(--color-primary);
+  @apply text-6xl md:text-9xl leading-16 md:leading-36 font-extrabold tracking-tight;
+}
+
+h2 {
+  color: var(--color-primary);
+  @apply text-5xl md:text-8xl leading-16 md:leading-36 font-extrabold tracking-tight;
+}
+
+h3 {
+  color: var(--color-primary);
+  @apply text-3xl md:text-7xl font-extrabold;
+}
+
+.button {
+  @apply font-bold text-[.85rem] bg-[var(--color-primary)] hover:bg-[var(--color-primary)]/95 text-white px-6 py-4 rounded-full;
+}
+
+.custom-link {
+  color: var(--color-primary);
+  @apply text-lg font-medium;
+}
