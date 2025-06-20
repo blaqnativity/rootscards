@@ -5,9 +5,9 @@ const Hero: React.FC = () => {
   return (
     <div>
       <section className="w-full px-6 md:px-20 py-16 bg-white text-[var(--color-primary)]">
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div className="container mx-auto flex flex-col md:flex-1/2 gap-8 items-start">
           {/* Left Section - Big Heading */}
-          <div className="col-span-4">
+          <div className="col-span-3">
             <h1>
               —build, engage, earn, <br />
               and check-in
@@ -19,8 +19,8 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Right Section - Paragraph and Users */}
-          <div className="flex flex-col gap-6">
-            <p className="text-base md:text-lg text-[var(--text-secondary)] max-w-md">
+          <div className="flex flex-col gap-6 md:self-end">
+            <p className="text-lg md:text-lg text-[var(--text-secondary)] max-w-md">
               One tool for all—showcase your work, grow your business, and speed
               up check-ins with ease.
             </p>

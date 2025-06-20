@@ -42,5 +42,5 @@ h3 {
 
 .custom-link {
   color: var(--color-primary);
-  @apply text-lg font-medium;
+  @apply text-lg font-semibold hover:text-[var(--color-primary)]/70 transition duration-300;
 }
