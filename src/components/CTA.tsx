@@ -14,7 +14,7 @@ const CTA = () => {
 
         {/* Heading and CTA Button */}
         <div className="mx-auto max-w-5xl text-center">
-          <h1 className="text-3xl sm:text-4xl font-bold text-[var(--color-primary)]">
+          <h1 className="cta-title text-3xl sm:text-4xl font-bold text-[var(--color-primary)]">
             Let’s show, earn, and simplify!
           </h1>
           <div className="mt-6 sm:mt-10 flex items-center justify-center gap-x-6">

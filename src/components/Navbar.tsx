@@ -57,7 +57,7 @@ const Navbar = () => {
 
       {/* Mobile Menu Dropdown */}
       {isOpen && (
-        <div className="absolute top-full h-screen left-0 w-full bg-white z-50 flex flex-col items-start space-y-4 py-6 px-4 md:hidden transition-all duration-300 ease-in-out">
+        <div className="absolute top-full h-screen left-0 w-full bg-[var(--color-gray-light)] z-50 flex flex-col items-start space-y-4 py-6 px-4 md:hidden transition-all duration-300 ease-in-out">
           {navMenu.map((item, index) => (
             <Link
               to={item.url}

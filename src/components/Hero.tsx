@@ -5,12 +5,30 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 const Hero: React.FC = () => {
+  const countObj = { val: 0 };
+  gsap.to(countObj, {
+    val: 12,
+    duration: 5,
+    ease: "power1.out",
+    onUpdate: () => {
+      const el = document.querySelector(".user-count");
+      if (el) {
+        el.textContent = `${Math.floor(countObj.val).toLocaleString()}K+`;
+      }
+    },
+  });
+
   useGSAP(() => {
     const tl = gsap.timeline({
       defaults: { duration: 2, ease: "power1.out", opacity: 0 },
     });
 
-    tl.from(".hero-title", { y: -80 })
+    tl.from(".hero-title", {
+      y: -80,
+      opacity: 0,
+      duration: 1.5,
+      ease: "bounce.out",
+    })
       .from(".hero-text", { x: 80 }, "-=1.5")
       .from(".hero-avatar", { y: 80 }, "-=1.5");
 
@@ -78,7 +96,7 @@ const UserStats = () => (
       />
     </div>
     <div>
-      <p className="font-bold text-[var(--color-primary)]">12k+ Users</p>
+      <p className="user-count font-bold text-[var(--color-primary)]">0k+</p>
       <p className="text-sm text-[var(--text-secondary)]">Get Started</p>
     </div>
   </div>
