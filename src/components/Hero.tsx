@@ -1,7 +1,19 @@
 import avatarOne from "../assets/images/human1.jpg";
 import avatarTwo from "../assets/images/human2.jpg";
+import rollingSvg from "../assets/rollingsvg.svg";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 const Hero: React.FC = () => {
+  useGSAP(() => {
+    gsap.to(".img", {
+      rotation: 360,
+      duration: 10,
+      ease: "none",
+      repeat: -1,
+    });
+  });
+
   return (
     <div>
       <section className="w-full px-6 md:px-20 py-16 text-[var(--color-primary)] md:h-[80vh]">
@@ -13,6 +25,10 @@ const Hero: React.FC = () => {
               and check-in
               <br />
               <span className="inline-flex items-center gap-2">
+                <img
+                  src={rollingSvg}
+                  className="img hidden md:block mr-5 ml-20 fill-[currentColor]"
+                />
                 effortlessly.
               </span>
             </h1>
