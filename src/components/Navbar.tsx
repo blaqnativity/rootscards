@@ -2,7 +2,7 @@ import { useState } from "react";
 import Logo from "../assets/logo.svg";
 import { Link } from "react-router-dom";
 import { navMenu } from "../../dataStore";
-import { RiMenu4Fill, RiCloseLine } from "@remixicon/react";
+import { RiMenu4Fill, RiCheckboxIndeterminateLine } from "@remixicon/react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +27,11 @@ const Navbar = () => {
               onClick={toggleMenu}
               className="text-blue-950 font-light text-4xl"
             >
-              {isOpen ? <RiCloseLine size={30} /> : <RiMenu4Fill size={30} />}
+              {isOpen ? (
+                <RiCheckboxIndeterminateLine size={30} />
+              ) : (
+                <RiMenu4Fill size={30} />
+              )}
             </button>
           </div>
         </div>

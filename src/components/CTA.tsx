@@ -2,7 +2,7 @@ import { RiArrowUpLine } from "@remixicon/react";
 
 const CTA = () => {
   return (
-    <div className="border-b my-20">
+    <div className="my-20">
       <div className="py-8 px-6 sm:px-6 sm:py-20 flex flex-col items-center gap-4">
         {/* Arrow Icon */}
         <div>

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="container mx-auto py-8 px-4 z-10 flex justify-content-center align-items-center">
+    <footer className="container border-t border-[-var(--color-primary)] mx-auto py-8 px-4 z-10 flex justify-content-center align-items-center">
       <p className="text-lg font-normal text-[var(--color-primary)]">
         All rights reserved — 2025 © Rootscards
       </p>

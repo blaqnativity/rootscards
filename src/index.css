@@ -17,13 +17,17 @@
 body {
   font-family: "Instrument Sans", sans-serif;
   scroll-behavior: smooth;
-  background-color: var(--color-white);
+  background-color: var(--color-gray-light);
   color: var(--text-primary);
+}
+
+nav {
+  background-color: var(--color-gray-light);
 }
 
 h1 {
   color: var(--color-primary);
-  @apply text-6xl md:text-9xl leading-16 md:leading-36 font-extrabold tracking-tight;
+  @apply text-6xl md:text-9xl leading-16 md:leading-36 font-extrabold tracking-wide;
 }
 
 h2 {

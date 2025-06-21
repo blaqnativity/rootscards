@@ -4,10 +4,10 @@ import avatarTwo from "../assets/images/human2.jpg";
 const Hero: React.FC = () => {
   return (
     <div>
-      <section className="w-full px-6 md:px-20 py-16 bg-white text-[var(--color-primary)]">
-        <div className="container mx-auto flex flex-col md:flex-1/2 gap-8 items-start">
+      <section className="w-full px-6 md:px-20 py-16 text-[var(--color-primary)] md:h-[80vh]">
+        <div className="relative container mx-auto flex flex-col md:flex-1/2 gap-8 items-start justify-center h-full">
           {/* Left Section - Big Heading */}
-          <div className="col-span-3">
+          <div className="col-span-3 md:col-span-5">
             <h1>
               —build, engage, earn, <br />
               and check-in
@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Right Section - Paragraph and Users */}
-          <div className="flex flex-col gap-6 md:self-end">
+          <div className="md:absolute lg:bottom-24 flex flex-col gap-6 md:self-end">
             <p className="text-lg md:text-lg text-[var(--text-secondary)] max-w-md">
               One tool for all—showcase your work, grow your business, and speed
               up check-ins with ease.
