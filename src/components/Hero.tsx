@@ -5,36 +5,46 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 const Hero: React.FC = () => {
-  const countObj = { val: 0 };
-  gsap.to(countObj, {
-    val: 12,
-    duration: 5,
-    ease: "power1.out",
-    onUpdate: () => {
-      const el = document.querySelector(".user-count");
-      if (el) {
-        el.textContent = `${Math.floor(countObj.val).toLocaleString()}K+`;
-      }
-    },
-  });
-
   useGSAP(() => {
-    const tl = gsap.timeline({
-      defaults: { duration: 2, ease: "power1.out", opacity: 0 },
+    const countObj = { val: 0 };
+
+    gsap.to(countObj, {
+      val: 12,
+      duration: 5,
+      ease: "power1.out",
+      onUpdate: () => {
+        const el = document.querySelector(".user-count");
+        if (el) {
+          el.textContent = `${Math.floor(countObj.val).toLocaleString()}K+`;
+        }
+      },
     });
 
-    tl.from(".hero-title", {
-      y: -80,
-      opacity: 0,
-      duration: 1.5,
-      ease: "bounce.out",
-    })
-      .from(".hero-text", { x: 80 }, "-=1.5")
-      .from(".hero-avatar", { y: 80 }, "-=1.5");
+    // default styles/ values
+    const tl = gsap.timeline({
+      defaults: {
+        duration: 1,
+        ease: "power4.inOut",
+        opacity: 0,
+        // repeat: -1,
+      },
+    });
 
+    // hero texts animations
+    tl.from(".hero-title", { y: -80 }).from(".hero-text", { x: 80 }).from(
+      ".hero-avatar",
+      {
+        stagger: 0.2,
+        x: 40,
+        opacity: 0,
+      },
+      "-=0.8"
+    );
+
+    // spinning cogwheel
     gsap.to(".img", {
       rotation: 360,
-      duration: 10,
+      duration: 5,
       ease: "none",
       repeat: -1,
     });
@@ -79,20 +89,20 @@ const Content = () => (
 );
 
 const UserStats = () => (
-  <div className="hero-avatar w-full border-t border-gray-300 pt-6 flex items-center gap-4">
+  <div className="w-full border-t border-gray-300 pt-6 flex items-center gap-4">
     <div className="flex -space-x-3">
-      <div className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center text-lg font-semibold border-2 border-white">
+      <div className="hero-avatar w-10 h-10 rounded-full bg-black text-white flex items-center justify-center text-lg font-semibold border-2 border-white">
         +
       </div>
       <img
         src={avatarOne}
         alt="User 1"
-        className="w-10 h-10 rounded-full border-2 border-white object-cover object-top"
+        className="hero-avatar w-10 h-10 rounded-full border-2 border-white object-cover object-top"
       />
       <img
         src={avatarTwo}
         alt="User 2"
-        className="w-10 h-10 rounded-full border-2 border-white object-cover object-top"
+        className="hero-avatar w-10 h-10 rounded-full border-2 border-white object-cover object-top"
       />
     </div>
     <div>

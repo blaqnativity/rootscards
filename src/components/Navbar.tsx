@@ -1,17 +1,41 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Logo from "../assets/logo.svg";
 import { Link } from "react-router-dom";
 import { navMenu } from "../../dataStore";
 import { RiMenu4Fill, RiCheckboxIndeterminateLine } from "@remixicon/react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  // using gsap's animation
+  useGSAP(() => {
+    const navTween = gsap.timeline({
+      scrollTrigger: {
+        trigger: "nav",
+        start: "bottom top",
+      },
+    });
 
+    navTween.fromTo(
+      ".navbar",
+      { backgroundColor: "transparent" },
+      {
+        backgroundColor: "#f4f4f4",
+        duration: 1,
+        ease: "power1.inOut",
+      }
+    );
+  });
+
+  const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <nav className="relative container mx-auto flex items-center justify-between sm:h-10 md:justify-center py-6 md:py-8 px-4 mt-2">
+    <nav className="navbar relative container mx-auto flex items-center justify-between sm:h-10 md:justify-center py-6 md:py-8 px-4 mt-2">
       {/* Logo + Mobile Menu Button */}
       <div className="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0">
         <div className="flex items-center justify-between w-full md:w-auto">

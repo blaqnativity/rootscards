@@ -1,4 +1,9 @@
 import bubble from "../assets/images/bubble.gif";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const GifImage = () => {
   return (
@@ -6,7 +11,7 @@ const GifImage = () => {
       <img
         src={bubble}
         alt="Human Illustration"
-        className="w-full max-h-[800px] object-cover object-top rounded-lg"
+        className="gifImage w-full max-h-[800px] object-cover object-top rounded-lg"
       />
     </div>
   );
