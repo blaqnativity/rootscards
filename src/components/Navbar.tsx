@@ -1,81 +1,32 @@
-import { useState } from "react";
 import Logo from "../assets/logo.svg";
 import { Link } from "react-router-dom";
-import { navMenu } from "../../dataStore";
-import { RiMenu4Fill, RiCheckboxIndeterminateLine } from "@remixicon/react";
+import { navMenu } from "../../constants";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const toggleMenu = () => setIsOpen(!isOpen);
-  const closeMenu = () => setIsOpen(false);
-
   return (
-    <nav className="navbar relative container mx-auto flex items-center justify-between sm:h-10 md:justify-center py-6 md:py-8 px-4 mt-2">
-      {/* Logo + Mobile Menu Button */}
-      <div className="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0">
-        <div className="flex items-center justify-between w-full md:w-auto">
-          <Link to="/" aria-label="Home">
-            <img src={Logo} alt="Logo" height="auto" width="50" />
-          </Link>
+    <nav className="py-8 dark:bg-[var(--color-text)]">
+      <div className="flex flex-wrap items-center justify-between container px-4 mx-auto">
+        <Link to="/" className="flex items-center">
+          <img src={Logo} className="h-6 mr-3 sm:h-9" alt="rootscards_logo" />
+        </Link>
 
-          {/* Mobile Hamburger Button */}
-          <div className="-mr-2 flex items-center md:hidden">
-            <button
-              type="button"
-              aria-label="Main menu"
-              onClick={toggleMenu}
-              className="text-blue-950 font-light text-4xl"
-            >
-              {isOpen ? (
-                <RiCheckboxIndeterminateLine size={30} />
-              ) : (
-                <RiMenu4Fill size={30} />
-              )}
-            </button>
-          </div>
+        <div
+          className="items-center justify-between w-full lg:flex lg:w-auto lg:order-1"
+          id="mobile-menu-2"
+        >
+          <ul className="flex flex-col gap-5 md:gap-0 mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0 md:items-center">
+            {navMenu.map((link, index) => (
+              <li key={index}>
+                <Link to={link.url} className="custom-link">
+                  {link.menu}
+                </Link>
+              </li>
+            ))}
+
+            <button className="btnMain">start free trial</button>
+          </ul>
         </div>
       </div>
-
-      {/* Desktop Nav Links */}
-      <div className="hidden md:flex md:space-x-10">
-        {navMenu.map((item, index) => (
-          <Link to={item.url} className="custom-link" key={index}>
-            {item.menu}
-          </Link>
-        ))}
-      </div>
-
-      {/* Desktop CTA Button */}
-      <div className="hidden md:absolute md:flex md:items-center md:justify-end md:inset-y-0 md:right-0">
-        <span className="inline-flex rounded-md ml-2">
-          <Link to="https://app.rootscards.com/" className="button">
-            Get Started
-          </Link>
-        </span>
-      </div>
-
-      {/* Mobile Menu Dropdown */}
-      {isOpen && (
-        <div className="absolute top-full h-screen left-0 w-full bg-[var(--color-gray-light)] z-50 flex flex-col items-start space-y-4 py-6 px-4 md:hidden transition-all duration-300 ease-in-out">
-          {navMenu.map((item, index) => (
-            <Link
-              to={item.url}
-              key={index}
-              onClick={closeMenu}
-              className="block text-blue-950 text-lg font-medium"
-            >
-              {item.menu}
-            </Link>
-          ))}
-          <Link
-            to="https://app.rootscards.com/"
-            className="mt-4 inline-block button"
-            onClick={closeMenu}
-          >
-            Get Started
-          </Link>
-        </div>
-      )}
     </nav>
   );
 };

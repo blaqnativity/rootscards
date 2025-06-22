@@ -1,18 +1,26 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 
 const Footer = () => {
   return (
-    <footer className="container border-t border-[-var(--color-primary)] mx-auto py-8 px-4 z-10 flex justify-content-center align-items-center">
-      <p className="text-lg font-normal text-[var(--color-primary)]">
-        All rights reserved — 2025 © Rootscards
-      </p>
-      <div className="flex ml-auto gap-4">
-        <Link to="#" className="custom-link">
-          Usecase
-        </Link>
-        <Link to="#" className="custom-link">
-          Login
-        </Link>
+    <footer className="leading-6 mt-8">
+      <div className="container mx-auto flex md:items-center justify-between py-8 px-4">
+        <div className="mb-6 sm:mb-0 flex flex-col space-y-6 md:flex-row gap-x-6">
+          <Link className="custom-link" to="/">
+            Terms & Conditions
+          </Link>
+          <Link className="custom-link" to="/">
+            Usecases
+          </Link>
+          <Link className="custom-link" to="/">
+            Privacy
+          </Link>
+        </div>
+
+        <div>
+          <Link className="custom-link" to="/">
+            Login
+          </Link>
+        </div>
       </div>
     </footer>
   );

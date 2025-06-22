@@ -1,50 +1,33 @@
-@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap");
+@import url("https://fonts.cdnfonts.com/css/satoshi");
 @import "tailwindcss";
 
 :root {
   /* Brand Colors */
-  --color-primary: #180955;
-  --color-secondary: #ff6f61;
-  --color-accent: #fbbc05;
-
-  /* Neutral Colors */
-  --color-white: #f8f6fc;
-  --color-black: #000000;
-  --color-gray-light: #f4f4f4;
-  --color-gray-dark: #333333;
+  --color-body: #171717;
+  --color-light: #d4d4d4;
+  --text-color: #d4d4d4;
 }
 
 body {
-  font-family: "Instrument Sans", sans-serif;
+  font-family: "Satoshi", sans-serif;
   scroll-behavior: smooth;
-  background-color: var(--color-gray-light);
-  color: var(--text-primary);
+  background-color: var(--color-body);
+  color: var(--color-body);
 }
 
 nav {
-  background-color: var(--color-gray-light);
-}
-
-h1 {
-  color: var(--color-primary);
-  @apply text-6xl md:text-9xl leading-16 md:leading-36 font-extrabold tracking-wide;
-}
-
-h2 {
-  color: var(--color-primary);
-  @apply text-5xl md:text-8xl leading-16 md:leading-36 font-extrabold tracking-tight;
-}
-
-h3 {
-  color: var(--color-primary);
-  @apply text-3xl md:text-7xl font-extrabold;
-}
-
-.button {
-  @apply font-bold text-[.85rem] bg-[var(--color-primary)] hover:bg-[var(--color-primary)]/95 text-white px-6 py-4 rounded-full;
+  background-color: var(--color-body);
 }
 
 .custom-link {
-  color: var(--color-primary);
-  @apply text-lg font-semibold hover:text-[var(--color-primary)]/70 transition duration-300;
+  @apply text-lg font-normal text-[var(--text-color)] transition duration-300;
+}
+
+.btnMain {
+  @apply bg-[var(--text-color)] px-8 py-3 rounded-full font-semibold text-xl md:ml-8;
+}
+
+.header-text {
+  @apply font-bold leading-[120%] text-[var(--text-color)] text-[3rem];
+  letter-spacing: -0.05em;
 }

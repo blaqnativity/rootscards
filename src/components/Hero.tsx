@@ -1,115 +1,24 @@
-import avatarOne from "../assets/images/human1.jpg";
-import avatarTwo from "../assets/images/human2.jpg";
-import rollingSvg from "../assets/rollingsvg.svg";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
+import rcCards from "../assets/images/rc-cards.svg";
+import rcSuites from "../assets/images/rc-suites.svg";
 
-const Hero: React.FC = () => {
-  useGSAP(() => {
-    const countObj = { val: 0 };
-
-    gsap.to(countObj, {
-      val: 12,
-      duration: 5,
-      ease: "power1.out",
-      onUpdate: () => {
-        const el = document.querySelector(".user-count");
-        if (el) {
-          el.textContent = `${Math.floor(countObj.val).toLocaleString()}K+`;
-        }
-      },
-    });
-
-    // default styles/ values
-    const tl = gsap.timeline({
-      defaults: {
-        duration: 1,
-        ease: "power4.inOut",
-        opacity: 0,
-        // repeat: -1,
-      },
-    });
-
-    // hero texts animations
-    tl.from(".hero-title", { y: -80 }).from(".hero-text", { x: 80 }).from(
-      ".hero-avatar",
-      {
-        stagger: 0.2,
-        x: 40,
-        opacity: 0,
-      },
-      "-=0.8"
-    );
-
-    // spinning cogwheel
-    gsap.to(".img", {
-      rotation: 360,
-      duration: 5,
-      ease: "none",
-      repeat: -1,
-    });
-  }, []);
-
+const Hero = () => {
   return (
-    <section className="w-full px-6 md:px-20 py-16 text-[var(--color-primary)] md:h-[80vh]">
-      <div className="relative container mx-auto flex flex-col md:flex-1/2 gap-8 items-start justify-center h-full">
-        <Title />
-        <Content />
+    <section className="container mx-auto text-center py-6 px-4 grid grid-cols-1 gap-10 mt-10">
+      <h1 className="header-text">
+        Rootscards is the AI operating layer for smart check-ins
+      </h1>
+
+      {/* flex images */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <img className="" src={rcCards} alt="" />
+        </div>
+        <div>
+          <img className="" src={rcSuites} alt="" />
+        </div>
       </div>
     </section>
   );
 };
-
-const Title = () => (
-  <div className="col-span-3 md:col-span-5">
-    <h1 className="hero-title">
-      —build, engage, earn, <br />
-      and check-in
-      <br />
-      <span className="inline-flex items-center gap-2">
-        <img
-          src={rollingSvg}
-          className="img hidden md:block mr-5 ml-20 fill-[currentColor]"
-          alt="Rolling icon"
-        />
-        effortlessly.
-      </span>
-    </h1>
-  </div>
-);
-
-const Content = () => (
-  <div className="md:absolute lg:bottom-24 flex flex-col gap-6 md:self-end">
-    <p className="hero-text text-lg md:text-lg text-[var(--text-secondary)] max-w-md">
-      One tool for all—showcase your work, grow your business, and speed up
-      check-ins with ease.
-    </p>
-    <UserStats />
-  </div>
-);
-
-const UserStats = () => (
-  <div className="w-full border-t border-gray-300 pt-6 flex items-center gap-4">
-    <div className="flex -space-x-3">
-      <div className="hero-avatar w-10 h-10 rounded-full bg-black text-white flex items-center justify-center text-lg font-semibold border-2 border-white">
-        +
-      </div>
-      <img
-        src={avatarOne}
-        alt="User 1"
-        className="hero-avatar w-10 h-10 rounded-full border-2 border-white object-cover object-top"
-      />
-      <img
-        src={avatarTwo}
-        alt="User 2"
-        className="hero-avatar w-10 h-10 rounded-full border-2 border-white object-cover object-top"
-      />
-    </div>
-    <div>
-      <p className="user-count font-bold text-[var(--color-primary)]">0k+</p>
-      <p className="text-sm text-[var(--text-secondary)]">Get Started</p>
-    </div>
-  </div>
-);
 
 export default Hero;
