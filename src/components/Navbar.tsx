@@ -1,35 +1,10 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import Logo from "../assets/logo.svg";
 import { Link } from "react-router-dom";
 import { navMenu } from "../../dataStore";
 import { RiMenu4Fill, RiCheckboxIndeterminateLine } from "@remixicon/react";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const Navbar = () => {
-  // using gsap's animation
-  useGSAP(() => {
-    const navTween = gsap.timeline({
-      scrollTrigger: {
-        trigger: "nav",
-        start: "bottom top",
-      },
-    });
-
-    navTween.fromTo(
-      ".navbar",
-      { backgroundColor: "transparent" },
-      {
-        backgroundColor: "#f4f4f4",
-        duration: 1,
-        ease: "power1.inOut",
-      }
-    );
-  });
-
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
