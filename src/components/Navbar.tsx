@@ -7,7 +7,7 @@ const Navbar = () => {
     <nav className="py-8 dark:bg-[var(--color-text)]">
       <div className="flex flex-wrap items-center justify-between container px-4 mx-auto">
         <Link to="/" className="flex items-center">
-          <img src={Logo} className="h-6 mr-3 sm:h-9" alt="rootscards_logo" />
+          <img src={Logo} className="h-4 md:h-6 mr-3" alt="rootscards_logo" />
         </Link>
 
         <div
