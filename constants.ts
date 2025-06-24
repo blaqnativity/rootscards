@@ -9,16 +9,8 @@ export const navMenu: NavItem[] = [
     url: "/about",
   },
   {
-    menu: "Sign In/Up",
-    url: "/",
-  },
-  {
     menu: "Features",
     url: "/features",
-  },
-  {
-    menu: "Documentation",
-    url: "/documentation",
   },
   {
     menu: "Pricing",
@@ -34,6 +26,14 @@ export const navMenu: NavItem[] = [
   },
   {
     menu: "View demo",
-    url: "/demo",
+    url: "/demo.rootscards.com",
+  },
+  {
+    menu: "Documentation",
+    url: "/",
+  },
+  {
+    menu: "Sign In/Up",
+    url: "/http://app.rootscards.com",
   },
 ];

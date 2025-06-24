@@ -15,7 +15,7 @@ body {
   font-family: "Satoshi", sans-serif;
   scroll-behavior: smooth;
   background-color: var(--color-body);
-  color: var(--text-color); /* fixed */
+  color: var(--text-color);
 }
 
 nav {
@@ -23,11 +23,15 @@ nav {
 }
 
 .custom-link {
-  @apply text-[.8em] font-semibold text-[var(--text-color)] transition duration-300;
+  @apply text-[.9em] font-semibold text-[var(--text-color)] transition duration-300;
 }
 
 .btnMain {
   @apply bg-[var(--color-light)] text-[var(--text-dark)] px-4 py-2 rounded-full font-semibold text-[.8em];
+}
+
+.btnSmall {
+  @apply bg-white text-black rounded-full px-4 py-2 md:text-[12px] font-semibold shadow-md hover:bg-gray-200 transition;
 }
 
 .header-text {
