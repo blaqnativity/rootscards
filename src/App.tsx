@@ -4,7 +4,7 @@ import Footer from "./components/Footer";
 
 const App = () => {
   return (
-    <div>
+    <div className="container mx-auto  px-4">
       <Navbar />
       <Hero />
       <Footer />
