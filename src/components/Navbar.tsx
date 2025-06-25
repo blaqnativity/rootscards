@@ -2,9 +2,10 @@ import Logo from "../assets/logo.svg";
 import { Link } from "react-router-dom";
 import { navMenu } from "../../constants";
 import { RiMenuFill } from "@remixicon/react";
+import type { NavItem } from "../../constants";
 
 const Navbar = () => {
-  const renderLink = (link) => {
+  const renderLink = (link: NavItem): JSX.Element => {
     const isExternal = link.url.startsWith("https://");
 
     if (isExternal) {
@@ -26,7 +27,6 @@ const Navbar = () => {
       </Link>
     );
   };
-
   return (
     <nav className="relative py-5 dark:bg-[var(--color-text)]">
       <div className="flex items-center justify-between">
