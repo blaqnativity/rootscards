@@ -4,35 +4,29 @@ import gradient from "../assets/images/gradientBg.png";
 
 const Hero = () => {
   return (
-    <section className=" text-white py-20 h-[750px]">
+    <section className=" text-white py-20 lg:h-[750px] overflow-hidden">
       {/* Centered headline */}
       <h1 className="text-2xl md:text-4xl font-bold text-center mb-12">
         Rootscards is the AI operating layer for smart check-ins
       </h1>
 
       {/* Two feature cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 h-full">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 h-full">
         {/* RootsCards Feature */}
         <div
-          className="relative p-10 flex flex-col justify-between overflow-hidden"
+          className="relative p-5 md:p-10 flex flex-col gap-2 md:gap-4 justify-between md:justify-start md:overflow-visible rounded-xl h-[250px] md:h-full"
           style={{
             backgroundImage: `url(${gradient})`,
             backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "top",
+            backgroundPosition: "center",
           }}
         >
-          <div className="flex items-start">
-            <div className="flex-1/3 space-y-3">
-              <h2 className="text-2xl md:text-3xl font-medium">RootsCards</h2>
-              <p className="text-lg md:text-sl">
+          <div className="flex">
+            <div className="flex-1 space-y-1 md:space-y-4">
+              <h2 className="text-lg md:text-3xl font-medium">RootsCards</h2>
+              <p className="text-md md:text-xl">
                 Your smart card. Instantly connected.
               </p>
-              <small className="text-sm md:text-md text-[var(--text-color)]">
-                Your NFC-powered RootsCard instantly lets you check in, make
-                transactions, share your portfolio, and manage your digital
-                identity — wherever you go.
-              </small>
             </div>
             <div className="justify-end">
               <a href="" className="btnSmall">
@@ -40,33 +34,39 @@ const Hero = () => {
               </a>
             </div>
           </div>
+
+          {/* IMAGE - Centered Absolutely on md+ */}
+
           <img
             src={card}
             alt="RootsCard"
-            className="absolute bottom-40 left-50 h-[10rem]"
+            className="h-[5rem] md:h-[10rem] absolute top-1/3 md:top-1/2 left-1/4 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/4"
           />
+
+          <div className="md:w-2/3">
+            <small className="text-[8px] md:text-lg text-[var(--text-color)]">
+              Your NFC-powered RootsCard instantly lets you check in, make
+              transactions, share your portfolio, and manage your digital
+              identity — wherever you go.
+            </small>
+          </div>
         </div>
 
         {/* Rootscard Suite Feature */}
         <div
-          className="relative p-8 flex flex-col justify-between overflow-hidden"
+          className="relative p-5 md:p-10 flex flex-col gap-2 md:gap-4 justify-between md:justify-start md:overflow-visible rounded-xl h-[250px] md:h-full"
           style={{
             backgroundImage: `url(${gradient})`,
             backgroundSize: "cover",
-            backgroundPosition: "top",
+            backgroundPosition: "center",
           }}
         >
-          <div className="flex items-start">
-            <div className="flex-1/3 space-y-3">
-              <h2 className="text-2xl md:text-3xl font-medium">
+          <div className="flex">
+            <div className="flex-1 space-y-1 md:space-y-4">
+              <h2 className="text-lg md:text-3xl font-medium">
                 Rootscard Suite
               </h2>
-              <p className="text-lg md:text-sl">Your smart card + Helpdesk</p>
-              <small className="text-sm md:text-md text-[var(--text-color)]">
-                One seamless contact intelligence suite that gives deep insight
-                into user behavior, card interactions, and engagement — offering
-                a unified view across physical and digital touchpoints.
-              </small>
+              <p className="text-md md:text-xl">Your smart card + Helpdesk</p>
             </div>
             <div className="justify-end">
               <a href="" className="btnSmall">
@@ -75,11 +75,21 @@ const Hero = () => {
             </div>
           </div>
 
+          {/* IMAGE - Centered Absolutely on md+ */}
+
           <img
             src={dashboard}
-            alt="Rootscard Dashboard"
-            className="absolute -bottom-5 -right-30 w-full mt-10 rounded-2xl h-[20rem]"
+            alt="RootsCard"
+            className="h-[10rem] md:h-[30rem] absolute bottom-0 md:-bottom-40 -right-40"
           />
+
+          <div className="md:w-2/3 w-1/2">
+            <small className="text-[8px] md:text-lg text-[var(--text-color)]">
+              One seamless contact intelligence suite that gives deep insight
+              into user behavior, card interactions, and engagement — offering a
+              unified view across physical and digital touchpoints.
+            </small>
+          </div>
         </div>
       </div>
     </section>

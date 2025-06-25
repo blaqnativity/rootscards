@@ -1,12 +1,18 @@
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
+import HomeView from "./screens/HomeView";
+import ErrorPage from "./screens/ErrorPage";
 import Footer from "./components/Footer";
+import { Routes, Route } from "react-router-dom";
 
 const App = () => {
   return (
     <div className="max-w-[1680px] mx-auto  px-4">
       <Navbar />
-      <Hero />
+      <Routes>
+        <Route path="/" element={<HomeView />} />
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
+
       <Footer />
     </div>
   );
