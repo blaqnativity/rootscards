@@ -14,7 +14,7 @@ const Hero = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 h-full">
         {/* RootsCards Feature */}
         <div
-          className="relative p-5 md:p-10 flex flex-col gap-2 md:gap-4 justify-between md:justify-start md:overflow-visible rounded-xl h-[250px] md:h-full"
+          className="relative p-5 md:p-10 flex flex-col gap-2 md:gap-4 justify-between md:justify-start rounded-xl h-[250px] md:h-[500px] lg:h-full"
           style={{
             backgroundImage: `url(${gradient})`,
             backgroundSize: "cover",
@@ -40,7 +40,7 @@ const Hero = () => {
           <img
             src={card}
             alt="RootsCard"
-            className="h-[5rem] md:h-[10rem] absolute top-1/3 md:top-1/2 left-1/4 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/4"
+            className="h-[5rem] md:h-[8rem] lg:h-[10rem] absolute top-1/3 md:top-1/2 left-1/4 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/4"
           />
 
           <div className="md:w-2/3">
@@ -54,7 +54,7 @@ const Hero = () => {
 
         {/* Rootscard Suite Feature */}
         <div
-          className="relative p-5 md:p-10 flex flex-col gap-2 md:gap-4 justify-between md:justify-start md:overflow-visible rounded-xl h-[250px] md:h-full"
+          className="relative p-5 md:p-10 flex flex-col gap-2 md:gap-4 justify-between md:justify-start overflow-hidden rounded-xl h-[250px] md:h-[500px] lg:h-full"
           style={{
             backgroundImage: `url(${gradient})`,
             backgroundSize: "cover",
@@ -80,7 +80,7 @@ const Hero = () => {
           <img
             src={dashboard}
             alt="RootsCard"
-            className="h-[10rem] md:h-[30rem] absolute bottom-0 md:-bottom-40 -right-40"
+            className="h-[10rem] md:h-[20rem] lg:h-[30rem] absolute bottom-0 md:-bottom-10 lg:-bottom-40 md:-right-30 -right-40"
           />
 
           <div className="md:w-2/3 w-1/2">

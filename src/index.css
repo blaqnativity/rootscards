@@ -27,7 +27,7 @@ nav {
 }
 
 .btnMain {
-  @apply bg-[var(--color-light)] text-[var(--text-dark)] px-4 py-2 rounded-full font-semibold text-[.9em];
+  @apply bg-[var(--color-light)] text-[var(--text-dark)] px-4 py-2 rounded-full font-semibold text-[.9em] w-full md:w-fit text-center;
 }
 
 .btnSmall {

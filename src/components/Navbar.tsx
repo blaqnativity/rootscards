@@ -11,7 +11,7 @@ const Navbar = () => {
           <img src={Logo} className="h-[1.25em] mr-3" alt="rootscards_logo" />
         </Link>
 
-        <ul className="hidden md:flex font-medium space-x-8 items-center">
+        <ul className="hidden lg:flex font-medium space-x-8 items-center">
           {navMenu.map((link, index) => (
             <li key={index}>
               <Link to={link.url} className="custom-link">
@@ -26,13 +26,13 @@ const Navbar = () => {
         </ul>
 
         {/* toggle Link */}
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <RiMenuFill />
         </div>
       </div>
 
       {/* mobilemenu */}
-      <div className="absolute top-10 right-0 block md:hidden p-10 z-50 bg-[var(--color-body)]/95 rounded-bl-lg">
+      <div className="absolute top-10 right-0 block lg:hidden w-1/2 p-10 z-50 bg-[var(--color-body)]/95 rounded-bl-lg">
         <ul className="flex flex-col gap-4 items-start font-medium">
           {navMenu.map((link, index) => (
             <li key={index}>
