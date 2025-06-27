@@ -1,6 +1,5 @@
 import HomeView from "./screens/HomeView";
 import ErrorPage from "./screens/ErrorPage";
-import Footer from "./components/Footer";
 import MainLayout from "./layouts/MainLayout";
 import { Routes, Route } from "react-router-dom";
 
@@ -13,8 +12,6 @@ const App = () => {
         </Route>
         <Route path="*" element={<ErrorPage />} />
       </Routes>
-
-      <Footer />
     </div>
   );
 };
