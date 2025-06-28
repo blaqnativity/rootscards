@@ -1,6 +1,7 @@
 export interface NavItem {
   menu: string;
   url: string;
+  icon?: string | React.FC<{ size?: number }>;
 }
 
 export const navMenu: NavItem[] = [
@@ -39,37 +40,43 @@ export const navMenu: NavItem[] = [
 ];
 
 // mobile menu icons
-import homeIcon from "/home.png";
-import loginIcon from "/login.png";
-import featIcon from "/features.png";
-import conIcon from "/contact.png";
-import checkIcon from "/checkin.png";
-import pcIcon from "/pc.png";
-import codeIcon from "/code.png";
-import priceIcon from "/price.png";
+import {
+  RiMoreLine,
+  RiLoginBoxLine,
+  RiCodeSSlashFill,
+  RiPriceTag3Line,
+  RiTv2Line,
+  RiQrScan2Line,
+  RiContactsBook3Line,
+  RiListCheck,
+} from "@remixicon/react";
 
 // exporting them to be used
 export const icons = {
-  home: homeIcon,
-  login: loginIcon,
-  features: featIcon,
-  contact: conIcon,
-  checkin: checkIcon,
-  pricing: priceIcon,
-  demo: pcIcon,
-  docs: codeIcon,
+  home: RiMoreLine,
+  login: RiLoginBoxLine,
+  features: RiListCheck,
+  contact: RiContactsBook3Line,
+  checkin: RiQrScan2Line,
+  pricing: RiPriceTag3Line,
+  demo: RiTv2Line,
+  docs: RiCodeSSlashFill,
 } as const;
 
 export type IconKey = keyof typeof icons; // "home" | "login" | ...
 
 // mobile menu links and labels
 export const mobileMenu = [
-  { label: "Home", url: "/", icon: homeIcon },
-  { label: "Sign In/Up", url: "https://app.rootscards.com", icon: loginIcon },
-  { label: "Features", url: "/features", icon: featIcon },
-  { label: "Documentation", url: "/", icon: codeIcon },
-  { label: "Pricing", url: "/pricing", icon: priceIcon },
-  { label: "Check-in Suite", url: "/check-in-suite", icon: checkIcon },
-  { label: "Contact sales", url: "/contact-sales", icon: conIcon },
-  { label: "Demo", url: "https://demo.rootscards.com", icon: pcIcon },
+  { label: "Home", url: "/", icon: RiMoreLine },
+  {
+    label: "Sign In/Up",
+    url: "https://app.rootscards.com",
+    icon: RiLoginBoxLine,
+  },
+  { label: "Features", url: "/features", icon: RiListCheck },
+  { label: "Documentation", url: "/", icon: RiCodeSSlashFill },
+  { label: "Pricing", url: "/pricing", icon: RiPriceTag3Line },
+  { label: "Check-in Suite", url: "/check-in-suite", icon: RiQrScan2Line },
+  { label: "Contact sales", url: "/contact-sales", icon: RiContactsBook3Line },
+  { label: "Demo", url: "https://demo.rootscards.com", icon: RiTv2Line },
 ];

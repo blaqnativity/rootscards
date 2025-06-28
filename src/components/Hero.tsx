@@ -51,7 +51,7 @@ const Hero = () => {
             className="h-[8rem] md:h-[12rem] md:absolute top-1/3 md:top-1/2 left-1/4 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/4"
           />
 
-          <div className="w-fit">
+          <div>
             <small className="text-[8px] md:text-lg text-[var(--text-color)]">
               Your NFC-powered RootsCard instantly lets you check in, make
               transactions, share your portfolio, and manage your digital

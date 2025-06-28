@@ -36,7 +36,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {menu && (
-        <div className="absolute top-6 right-0 lg:hidden p-10 z-40 bg-[var(--color-body)]/95 rounded-bl-lg transition-all duration-300 ease-in-out">
+        <div className="absolute top-6 right-0 lg:hidden p-10 z-40 bg-[var(--color-body)]/95 rounded-bl-lg transition-all duration-300 ease-in-out w-1/2">
           <ul className="flex flex-col gap-4 items-start font-medium w-full">
             {mobileMenu.map((item, index) => (
               <Link
@@ -44,11 +44,15 @@ const Navbar = () => {
                 to={item.url}
                 className="custom-link flex items-center space-x-3"
               >
-                <img
-                  src={item.icon}
-                  alt={`${item.label} icon`}
-                  className="w-5 h-5"
-                />
+                {typeof item.icon === "string" ? (
+                  <img
+                    src={item.icon}
+                    alt={`${item.label} icon`}
+                    className="w-5 h-5"
+                  />
+                ) : (
+                  <item.icon size={20} />
+                )}
                 <span>{item.label}</span>
               </Link>
             ))}
