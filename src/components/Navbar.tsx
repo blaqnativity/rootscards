@@ -36,7 +36,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {menu && (
-        <div className="absolute top-6 w-1/2 right-0 lg:hidden p-10 z-40 bg-[var(--color-body)]/95 rounded-bl-lg transition-all duration-300 ease-in-out">
+        <div className="absolute top-6 right-0 lg:hidden p-10 z-40 bg-[var(--color-body)]/95 rounded-bl-lg transition-all duration-300 ease-in-out">
           <ul className="flex flex-col gap-4 items-start font-medium w-full">
             {mobileMenu.map((item, index) => (
               <Link
