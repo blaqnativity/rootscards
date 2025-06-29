@@ -2,7 +2,7 @@ import { Link } from "react-router";
 
 const Footer = () => {
   return (
-    <footer className="leading-6 mt-8">
+    <footer className="pb-2">
       <div className="flex flex-col md:flex-row md:justify-between gap-6">
         <div className="flex flex-col space-y-6 md:flex-row gap-x-6">
           <Link className="custom-link" to="/">

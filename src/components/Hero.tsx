@@ -5,9 +5,9 @@ import vector from "../assets/images/Vector.svg";
 
 const Hero = () => {
   return (
-    <section className=" text-white py-20 lg:h-[750px] overflow-hidden">
+    <section className=" text-white my-10 lg:h-[700px] overflow-hidden">
       {/* Centered headline */}
-      <div className="relative mb-16">
+      <div className="relative py-10">
         <h1 className="text-2xl md:text-4xl font-bold text-center relative">
           Rootscards is the AI operating layer for{" "}
           <span className="relative inline-block">
@@ -25,7 +25,7 @@ const Hero = () => {
 
       {/* Two feature cards */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 h-full">
-        {/* RootsCards Feature */}
+        {/* card one (RootsCards Feature) */}
         <div
           className="relative p-5 md:p-10 flex flex-col gap-2 md:gap-4 justify-between md:justify-start h-full rounded-2xl"
           style={{
@@ -65,7 +65,7 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Rootscard Suite Feature */}
+        {/* card two (Rootscard Suite Feature) */}
         <div
           className="relative p-5 md:p-10 flex flex-col gap-2 md:gap-4 justify-between md:justify-start overflow-hidden h-full  rounded-2xl"
           style={{
@@ -95,7 +95,7 @@ const Hero = () => {
           <img
             src={dashboard}
             alt="RootsCard"
-            className="h-[10rem] md:h-[20rem] lg:h-[30rem] md:absolute bottom-0 md:-bottom-10 lg:-bottom-40 md:-right-30 -right-40"
+            className="h-[10rem] md:h-[20rem] lg:h-[30rem] md:absolute bottom-0 md:-bottom-5 md:-right-30 -right-40"
           />
 
           <div className="">
