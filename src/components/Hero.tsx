@@ -42,7 +42,7 @@ const Hero = () => {
               </p>
             </div>
             <div className="justify-end">
-              <a href="" className="btnSmall">
+              <a href="" className="btnp">
                 Explore Rootscards
               </a>
             </div>
@@ -57,11 +57,11 @@ const Hero = () => {
           />
 
           <div>
-            <small className="text-[8px] md:text-lg text-[var(--text-color)]">
+            <p className="text-[8px] md:text-lg text-[var(--text-color)]">
               Your NFC-powered RootsCard instantly lets you check in, make
               transactions, share your portfolio, and manage your digital
               identity — wherever you go.
-            </small>
+            </p>
           </div>
         </div>
 
@@ -84,7 +84,7 @@ const Hero = () => {
               </p>
             </div>
             <div className="justify-end">
-              <a href="" className="btnSmall">
+              <a href="" className="btnp">
                 Explore Rootscards
               </a>
             </div>
@@ -99,11 +99,11 @@ const Hero = () => {
           />
 
           <div className="">
-            <small className="text-[8px] md:text-lg text-[var(--text-color)]">
+            <p className="text-[8px] md:text-lg text-[var(--text-color)]">
               One seamless contact intelligence suite that gives deep insight
               into user behavior, card interactions, and engagement — offering a
               unified view across physical and digital touchpoints.
-            </small>
+            </p>
           </div>
         </div>
       </div>
