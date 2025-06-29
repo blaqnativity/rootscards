@@ -7,17 +7,22 @@ const Hero = () => {
   return (
     <section className=" text-white py-20 lg:h-[750px] overflow-hidden">
       {/* Centered headline */}
-      <div className="relative  mb-15">
-        <h1 className="text-2xl md:text-4xl font-bold text-center">
-          Rootscards is the AI operating layer for smart check-ins
+      <div className="relative mb-16">
+        <h1 className="text-2xl md:text-4xl font-bold text-center relative">
+          Rootscards is the AI operating layer for{" "}
+          <span className="relative inline-block">
+            {/* The image sits on top */}
+            <img
+              src={vector}
+              alt="overlay"
+              className="absolute top-1/2 left-1/2 h-10 w-auto md:h-auto max-w-none -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none"
+            />
+            {/* The text stays below */}
+            <span className="relative z-0 text-white">smart check-ins</span>
+          </span>
         </h1>
-
-        <img
-          src={vector}
-          alt="skew-vector"
-          className="absolute w-40 md:w-fit top-8 right-10 md:right-85 md:-top-1"
-        />
       </div>
+
       {/* Two feature cards */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 h-full">
         {/* RootsCards Feature */}
